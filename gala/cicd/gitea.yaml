@@ -48,6 +48,9 @@ spec:
     spec:
       accessModes: [ "ReadWriteOnce" ]
       storageClassName: "local-storage"
+      resources:
+        requests:
+          storage: 2Gi
 ---
 apiVersion: apps/v1
 kind: StatefulSet
@@ -80,3 +83,6 @@ spec:
     spec:
       accessModes: [ "ReadWriteOnce" ]
       storageClassName: "local-storage"
+      resources:
+        requests:
+          storage: 2Gi
