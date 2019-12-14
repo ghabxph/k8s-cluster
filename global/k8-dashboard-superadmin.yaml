@@ -321,3 +321,21 @@ subjects:
 - kind: ServiceAccount
   name: super-admin
   namespace: kubernetes-dashboard
+
+# Ingress entry
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: dashboard
+  namespace: kubernetes-dashboard
+  annotations:
+    nginx.org/ssl-services: "kubernetes-dashboard"
+spec:
+  rules:
+  - host: dashboard-k8s.ghabxph.info
+    http:
+      paths:
+      - backend:
+          serviceName: kubernetes-dashboard
+          servicePort: 443
