@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: gala-cicd
+  labels:
+    name: gala-cicd
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: gala-staging
+  labels:
+    name: gala-staging
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: gala-prod
+  labels:
+    name: gala-prod
