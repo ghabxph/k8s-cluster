@@ -36,7 +36,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
   local:
-    path: /homne/k8s-pv/nfs/gitlab-gala
+    path: /home/k8s-pv/nfs/gitlab-gala
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -59,7 +59,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
   local:
-    path: /homne/k8s-pv/nfs/gitlab-postgresql-gala
+    path: /home/k8s-pv/nfs/gitlab-postgresql-gala
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -82,7 +82,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
   local:
-    path: /homne/k8s-pv/nfs/jenkins-gala
+    path: /home/k8s-pv/nfs/jenkins-gala
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -105,7 +105,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
   local:
-    path: /homne/k8s-pv/nfs/gitlab-ghabxph
+    path: /home/k8s-pv/nfs/gitlab-ghabxph
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -114,3 +114,10 @@ spec:
           operator: In
           values:
           - worker-003.k8.ghabxph.info
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: local-storage
+provisioner: kubernetes.io/no-provisioner
+volumeBindingMode: WaitForFirstConsumer
